@@ -1,0 +1,491 @@
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /Users/alexandrecalvao/.rvm/gems/ruby-2.6.6/bin/rake:23)
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /Users/alexandrecalvao/.rvm/gems/ruby-2.6.6/bin/rake:23)
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAnimals (20220111135822)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "animals" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220111135822"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-11 13:59:15.796462"], ["updated_at", "2022-01-11 13:59:15.796462"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /Users/alexandrecalvao/.rvm/gems/ruby-2.6.6/bin/rake:23)
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /Users/alexandrecalvao/.rvm/gems/ruby-2.6.6/bin/rake:23)
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /Users/alexandrecalvao/.rvm/gems/ruby-2.6.6/bin/rake:23)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (1.5ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "cachorro"], ["created_at", "2022-01-11 14:03:38.574110"], ["updated_at", "2022-01-11 14:03:38.574110"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-01-11 11:12:20 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alexandrecalvao/.rvm/gems/ruby-2.6.6/gems/railties-6.0.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alexandrecalvao/.rvm/gems/ruby-2.6.6/gems/railties-6.0.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.5ms | Allocations: 461)
+Completed 200 OK in 23ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 2541)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2022-01-11 11:12:57 -0300
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/alexandrecalvao/.rvm/gems/ruby-2.6.6/gems/railties-6.0.4.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/alexandrecalvao/.rvm/gems/ruby-2.6.6/gems/actionpack-6.0.4.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [1 times] (Duration: 14.0ms | Allocations: 380)
+  Rendered /Users/alexandrecalvao/.rvm/gems/ruby-2.6.6/gems/actionpack-6.0.4.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 17.5ms | Allocations: 2329)
+  Rendered /Users/alexandrecalvao/.rvm/gems/ruby-2.6.6/gems/railties-6.0.4.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 35.7ms | Allocations: 3361)
+Completed 200 OK in 44ms (Views: 39.4ms | ActiveRecord: 0.0ms | Allocations: 4552)
+
+
+Started POST "/animal?name=gato" for 127.0.0.1 at 2022-01-11 11:13:35 -0300
+  
+ActionController::RoutingError (uninitialized constant AnimalController
+Did you mean?  ApplicationController):
+  
+actionpack (6.0.4.4) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.4.4) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.4.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.4.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.4.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/cookies.rb:654:in `call'
+activerecord (6.0.4.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.4.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+railties (6.0.4.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/animal?name=gato" for 127.0.0.1 at 2022-01-11 11:14:53 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#create as */*
+  Parameters: {"name"=>"gato", "animal"=>{}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.4ms | Allocations: 413)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.0.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.0.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.0.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.0.4.4) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.4.4) lib/active_support/callbacks.rb:200:in `block (2 levels) in halting'
+actionpack (6.0.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.4.4) lib/active_support/callbacks.rb:201:in `block in halting'
+activesupport (6.0.4.4) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.4.4) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.4.4) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.4.4) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.4.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.4.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.4.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.4.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.4.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.4.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.4.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.4.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/cookies.rb:654:in `call'
+activerecord (6.0.4.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.4.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+railties (6.0.4.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/animal?name=gato" for 127.0.0.1 at 2022-01-11 11:16:56 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#create as */*
+  Parameters: {"name"=>"gato", "animal"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:3:in `create'
+  [1m[36mAnimal Create (1.2ms)[0m  [1m[32mINSERT INTO "animals" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2022-01-11 14:16:56.215943"], ["updated_at", "2022-01-11 14:16:56.215943"]]
+  ↳ app/controllers/animal_controller.rb:3:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:3:in `create'
+No template found for AnimalController#create, rendering head :no_content
+Completed 204 No Content in 11ms (ActiveRecord: 2.7ms | Allocations: 5696)
+
+
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+  [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/animal?name=gato" for 127.0.0.1 at 2022-01-11 11:18:34 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#create as */*
+  Parameters: {"name"=>"gato", "animal"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:3:in `create'
+  [1m[36mAnimal Create (0.7ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "gato"], ["created_at", "2022-01-11 14:18:34.675890"], ["updated_at", "2022-01-11 14:18:34.675890"]]
+  ↳ app/controllers/animal_controller.rb:3:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:3:in `create'
+No template found for AnimalController#create, rendering head :no_content
+Completed 204 No Content in 11ms (ActiveRecord: 2.3ms | Allocations: 4780)
+
+
+  [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/animal" for 127.0.0.1 at 2022-01-11 11:23:18 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#index as */*
+No template found for AnimalController#index, rendering head :no_content
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 955)
+
+
+Started GET "/animal" for 127.0.0.1 at 2022-01-11 11:24:17 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#index as */*
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/animal_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 1.2ms | Allocations: 4433)
+
+
+Started POST "/animal?name=galo" for 127.0.0.1 at 2022-01-11 11:24:40 -0300
+Processing by AnimalController#create as */*
+  Parameters: {"name"=>"galo", "animal"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:3:in `create'
+  [1m[36mAnimal Create (1.1ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "galo"], ["created_at", "2022-01-11 14:24:40.251503"], ["updated_at", "2022-01-11 14:24:40.251503"]]
+  ↳ app/controllers/animal_controller.rb:3:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:3:in `create'
+No template found for AnimalController#create, rendering head :no_content
+Completed 204 No Content in 6ms (ActiveRecord: 2.0ms | Allocations: 2352)
+
+
+Started POST "/animal?name=papagaio" for 127.0.0.1 at 2022-01-11 11:33:28 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#create as */*
+  Parameters: {"name"=>"papagaio", "animal"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:3:in `create'
+  [1m[36mAnimal Create (1.1ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "papagaio"], ["created_at", "2022-01-11 14:33:29.056587"], ["updated_at", "2022-01-11 14:33:29.056587"]]
+  ↳ app/controllers/animal_controller.rb:3:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:3:in `create'
+Completed 201 Created in 47ms (Views: 0.6ms | ActiveRecord: 2.2ms | Allocations: 4718)
+
+
+Started GET "/animal" for 127.0.0.1 at 2022-01-11 11:58:30 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/animal_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.5ms | Allocations: 4342)
+
+
+Started DELETE "/%20/animal/2" for 127.0.0.1 at 2022-01-11 11:58:44 -0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/%20/animal/2"):
+  
+actionpack (6.0.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+railties (6.0.4.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started DELETE "/animal/2" for 127.0.0.1 at 2022-01-11 11:59:01 -0300
+Processing by AnimalController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/animal_controller.rb:11:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:11:in `destroy'
+  [1m[36mAnimal Destroy (1.1ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/animal_controller.rb:11:in `destroy'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:11:in `destroy'
+No template found for AnimalController#destroy, rendering head :no_content
+Completed 204 No Content in 23ms (ActiveRecord: 2.5ms | Allocations: 5465)
+
+
+Started GET "/animal" for 127.0.0.1 at 2022-01-11 11:59:05 -0300
+Processing by AnimalController#index as */*
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/animal_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1309)
+
+
+Started DELETE "/animal/1" for 127.0.0.1 at 2022-01-11 11:59:43 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/animal_controller.rb:11:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:11:in `destroy'
+  [1m[36mAnimal Destroy (0.5ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/animal_controller.rb:11:in `destroy'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:11:in `destroy'
+Completed 200 OK in 15ms (Views: 0.7ms | ActiveRecord: 2.4ms | Allocations: 6024)
+
+
+Started GET "/animal" for 127.0.0.1 at 2022-01-11 11:59:50 -0300
+Processing by AnimalController#index as */*
+  [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/animal_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1199)
+
+
+Started POST "/animal?name=porquinho%20da%20india" for 127.0.0.1 at 2022-01-11 13:33:14 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#create as */*
+  Parameters: {"name"=>"porquinho da india", "animal"=>{}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1837)
+
+
+  
+NameError (uninitialized constant AnimalController::AnimalSerializer):
+  
+app/controllers/animal_controller.rb:4:in `create'
+Started POST "/animal?name=porquinho%20da%20india" for 127.0.0.1 at 2022-01-11 13:34:08 -0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AnimalController#create as */*
+  Parameters: {"name"=>"porquinho da india", "animal"=>{}}
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 0.4ms | Allocations: 48304)
+
+
+  
+NameError (undefined local variable or method `animal' for #<AnimalController:0x00007feb4a404ee8>
+Did you mean?  animal_url):
+  
+app/controllers/animal_controller.rb:4:in `create'
+Started POST "/animal?name=porquinho%20da%20india" for 127.0.0.1 at 2022-01-11 13:34:56 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#create as */*
+  Parameters: {"name"=>"porquinho da india", "animal"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+  [1m[36mAnimal Create (1.6ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "porquinho da india"], ["created_at", "2022-01-11 16:34:56.218569"], ["updated_at", "2022-01-11 16:34:56.218569"]]
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+Completed 201 Created in 11ms (Views: 0.3ms | ActiveRecord: 3.5ms | Allocations: 5445)
+
+
+Started GET "/animal" for 127.0.0.1 at 2022-01-11 13:36:24 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#index as */*
+  [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/animal_controller.rb:10:in `index'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.6ms | Allocations: 4579)
+
+
+Started DELETE "/animal/5" for 127.0.0.1 at 2022-01-11 13:36:34 -0300
+Processing by AnimalController#destroy as */*
+  Parameters: {"id"=>"5"}
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 0.0ms | Allocations: 48042)
+
+
+  
+NameError (undefined local variable or method `animal' for #<AnimalController:0x00007feb4df15af0>
+Did you mean?  animal_url):
+  
+app/controllers/animal_controller.rb:15:in `destroy'
+Started DELETE "/animal/5" for 127.0.0.1 at 2022-01-11 13:36:55 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/animal_controller.rb:15:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:15:in `destroy'
+  [1m[36mAnimal Destroy (1.1ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/animal_controller.rb:15:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:15:in `destroy'
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 4.4ms | Allocations: 6466)
+
+
+Started GET "/animal" for 127.0.0.1 at 2022-01-11 13:39:43 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#index as */*
+  [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/animal_controller.rb:10:in `index'
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 1.4ms | Allocations: 4411)
+
+
+Started PUT "/animal/3?name=cacatua" for 127.0.0.1 at 2022-01-11 13:39:54 -0300
+Processing by AnimalController#update as */*
+  Parameters: {"name"=>"cacatua", "id"=>"3"}
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/animal_controller.rb:23:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:23:in `update'
+  [1m[36mAnimal Update (0.6ms)[0m  [1m[33mUPDATE "animals" SET "name" = ?, "updated_at" = ? WHERE "animals"."id" = ?[0m  [["name", "cacatua"], ["updated_at", "2022-01-11 16:39:54.510156"], ["id", 3]]
+  ↳ app/controllers/animal_controller.rb:23:in `update'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:23:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:23:in `update'
+  [1m[36mAnimal Update (0.7ms)[0m  [1m[33mUPDATE "animals" SET "id" = ?, "name" = ?, "updated_at" = ? WHERE "animals"."id" = ?[0m  [["id", 3], ["name", "cacatua"], ["updated_at", "2022-01-11 16:39:54.517498"], ["id", 4]]
+  ↳ app/controllers/animal_controller.rb:23:in `update'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/animal_controller.rb:23:in `update'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 3.4ms | Allocations: 6658)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: animals.id):
+  
+app/controllers/animal_controller.rb:23:in `update'
+Started PUT "/animal/3?name=cacatua" for 127.0.0.1 at 2022-01-11 13:41:33 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#update as */*
+  Parameters: {"name"=>"cacatua", "id"=>"3"}
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/animal_controller.rb:21:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:21:in `update'
+  [1m[36mAnimal Update (0.8ms)[0m  [1m[33mUPDATE "animals" SET "id" = ?, "name" = ?, "updated_at" = ? WHERE "animals"."id" = ?[0m  [["id", 3], ["name", "cacatua"], ["updated_at", "2022-01-11 16:41:33.926674"], ["id", 4]]
+  ↳ app/controllers/animal_controller.rb:21:in `update'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/animal_controller.rb:21:in `update'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.1ms | Allocations: 7520)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: animals.id):
+  
+app/controllers/animal_controller.rb:21:in `update'
+Started PUT "/animal/3?name=cacatua" for 127.0.0.1 at 2022-01-11 13:47:18 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#update as */*
+  Parameters: {"name"=>"cacatua", "id"=>"3"}
+  [1m[36mAnimal Load (4.8ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/animal_controller.rb:21:in `update'
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 4.8ms | Allocations: 3892)
+
+
+Started PUT "/animal/3?name=tubar%C3%A3o" for 127.0.0.1 at 2022-01-11 13:47:54 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AnimalController#update as */*
+  Parameters: {"name"=>"tubarão", "id"=>"3"}
+  [1m[36mAnimal Load (1.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/animal_controller.rb:23:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:23:in `update'
+  [1m[36mAnimal Update (0.5ms)[0m  [1m[33mUPDATE "animals" SET "name" = ?, "updated_at" = ? WHERE "animals"."id" = ?[0m  [["name", "tubarão"], ["updated_at", "2022-01-11 16:47:54.597592"], ["id", 3]]
+  ↳ app/controllers/animal_controller.rb:23:in `update'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:23:in `update'
+Completed 200 OK in 22ms (Views: 0.8ms | ActiveRecord: 4.0ms | Allocations: 6566)
+
+

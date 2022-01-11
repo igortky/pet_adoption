@@ -1,0 +1,27 @@
+{
+  "description":"schema animal",
+  "type":"object",
+  "properties":{
+     "data":{
+       "type": "object",
+       "attributes":{
+          "id":{
+            "type":"string"
+          },
+          "type":{
+            "type":"string",
+            "enum":[
+              "animal"
+            ]
+          }
+       }
+     },
+     "attributes":{
+        "name":{
+           "type":"string"
+        }
+     }
+  }
+}
+
+
