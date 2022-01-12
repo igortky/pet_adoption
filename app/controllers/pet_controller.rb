@@ -27,7 +27,7 @@ class PetController < ApplicationController
   end
 
   def update
-    pet = Pet.update(params[:id], name: params[:name])
+    pet = Pet.update(params[:id], params.require(:pet).permit(:name,:animal_id))
     hash = PetSerializer.new(pet).serializable_hash
     render json: hash, status: :ok
   end

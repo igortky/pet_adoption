@@ -63,6 +63,7 @@ require 'rails_helper'
     describe '#update' do
       before do
         @animal = Animal.create(name: 'Galo')
+        @animal2 = Animal.create(name: 'Gato')
         @pet = Pet.create( name: 'agnes', animal_id: @animal.id,
                            checkin: Date.today,
                            checkout: Date.tomorrow,
@@ -70,9 +71,20 @@ require 'rails_helper'
       end
 
       it "changes de pet's name" do
-        put "/pet/#{@pet.id}", params: { name: 'tobby' }
+        put "/pet/#{@pet.id}", params: { pet: {name:"tobby"} }
         expect(@pet.reload.name).to be == 'tobby'
         expect(response.status).to eq 200
+      end
+      it "changes the pet's animal id" do
+        put "/pet/#{@pet.id}", params: { pet: { animal_id: @animal2.id } }
+        expect(@pet.reload.animal_id).to be == @animal2.id
+        expect(response.status).to eq 200
+      end
+      it 'changes the both name and animal id' do
+        put "/pet/#{@pet.id}", params: { pet: { name:"Pudim", animal_id: @animal2.id } }
+        expect(@pet.reload.animal_id).to be == @animal2.id
+        expect(response.status).to eq 200
+        expect(@pet.reload.name).to be == 'Pudim'
       end
     end
   end

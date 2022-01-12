@@ -1201,3 +1201,31 @@ FOREIGN KEY ("animal_id")
   [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/animal?name=cachorro" for 127.0.0.1 at 2022-01-12 14:17:01 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AnimalController#create as */*
+  Parameters: {"name"=>"cachorro", "animal"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+  [1m[36mAnimal Create (1.6ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "cachorro"], ["created_at", "2022-01-12 17:17:02.025017"], ["updated_at", "2022-01-12 17:17:02.025017"]]
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+Completed 201 Created in 53ms (Views: 2.5ms | ActiveRecord: 9.6ms | Allocations: 5624)
+
+
+Started POST "/pet?name=tobby&animal_id=1" for 127.0.0.1 at 2022-01-12 14:17:08 -0300
+Processing by PetController#create as */*
+  Parameters: {"name"=>"tobby", "animal_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pet_controller.rb:3:in `create'
+  [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pet_controller.rb:3:in `create'
+  [1m[36mPet Create (1.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "created_at", "updated_at", "animal_id") VALUES (?, ?, ?, ?)[0m  [["name", "tobby"], ["created_at", "2022-01-12 17:17:08.965784"], ["updated_at", "2022-01-12 17:17:08.965784"], ["animal_id", 1]]
+  ↳ app/controllers/pet_controller.rb:3:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pet_controller.rb:3:in `create'
+Completed 201 Created in 54ms (Views: 0.4ms | ActiveRecord: 4.4ms | Allocations: 12065)
+
+
