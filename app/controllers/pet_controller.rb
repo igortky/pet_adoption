@@ -26,4 +26,10 @@ class PetController < ApplicationController
     hash = PetSerializer.new(pet).serializable_hash
     render json: hash, status: :ok
   end
+
+  def update
+    pet = Pet.update(params[:id], name: params[:name])
+    hash = PetSerializer.new(pet).serializable_hash
+    render json: hash, status: :ok
+  end
 end

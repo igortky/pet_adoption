@@ -61,4 +61,20 @@ require 'rails_helper'
         expect(response.status).to eq 200
       end
     end
+
+    describe '#update' do
+      before do
+        @animal = Animal.create(name: 'Galo')
+        @pet = Pet.create( name: 'agnes', animal_id: @animal.id,
+                           checkin: Date.today,
+                           checkout: Date.tomorrow,
+                           birthdate: Date.today - 3.years)
+      end
+
+      it "changes de pet's name" do
+        put "/pet/#{@pet.id}", params: { name: 'tobby' }
+        expect(@pet.reload.name).to be == 'tobby'
+        expect(response.status).to eq 200
+      end
+    end
   end
