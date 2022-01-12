@@ -2,12 +2,18 @@ require 'rails_helper'
 
   describe PetController do
     describe '#create' do
+      before do
+        @animal = Animal.create(name: 'Galo')
+      end
       it 'create a new pet' do
-        post '/pet', params: { name: 'agnes', checkin: Date.today,
+        post '/pet', params: { name: 'agnes', animal_id: @animal.id,
+                               checkin: Date.today,
                                checkout: Date.tomorrow,
                                birthdate: Date.today - 3.years}
 
         expect(Pet.count).to be 1
+        puts response.body
+        #expect(response.body).to match_json_schema('pet')
       end
     end
 
@@ -24,17 +30,16 @@ require 'rails_helper'
       end
     end
 
-    # describe "#index" do
-    #   before do
-    #     @pet = Pet.create( name: 'agnes', checkin: Date.today,
-    #                        checkout: Date.tomorrow,
-    #                        birthdate: Date.today - 3.years)
-    #   end
+    describe '#index' do
+      before do
+        @pet = Pet.create( name: 'agnes', checkin: Date.today,
+                           checkout: Date.tomorrow,
+                           birthdate: Date.today - 3.years)
+      end
 
-    #   it 'show pet' do
-    #     get '/get'
-
-
-    #   end
-    # end
+      it 'list pets' do
+        get '/pet'
+        expect(response.status).to eq 200
+      end
+    end
   end

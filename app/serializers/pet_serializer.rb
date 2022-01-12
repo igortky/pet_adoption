@@ -2,5 +2,5 @@ class PetSerializer
   include JSONAPI::Serializer
 
   set_type :pet
-  attributes :name, :checkin, :checkout, :birthdate
+  attributes :name, :animal_id, :checkin, :checkout, :birthdate
 end

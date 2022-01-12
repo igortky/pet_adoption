@@ -660,3 +660,308 @@ Processing by PetController#index as */*
 Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 6496)
 
 
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 10:00:48 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:19:in `index'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1106)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 10:28:59 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:19:in `index'
+Completed 200 OK in 37ms (Views: 1.1ms | ActiveRecord: 1.5ms | Allocations: 7581)
+
+
+Started POST "/pet?name=agnes2" for 127.0.0.1 at 2022-01-12 10:29:09 -0300
+Processing by PetController#create as */*
+  Parameters: {"name"=>"agnes2"}
+Completed 201 Created in 57ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 7892)
+
+
+Started POST "/pet?name=agnes2" for 127.0.0.1 at 2022-01-12 10:29:10 -0300
+Processing by PetController#create as */*
+  Parameters: {"name"=>"agnes2"}
+Completed 201 Created in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1032)
+
+
+Started POST "/animal?name=porquinho%20da%20india2" for 127.0.0.1 at 2022-01-12 10:30:07 -0300
+Processing by AnimalController#create as */*
+  Parameters: {"name"=>"porquinho da india2", "animal"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+  [1m[36mAnimal Create (1.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "porquinho da india2"], ["created_at", "2022-01-12 13:30:07.861165"], ["updated_at", "2022-01-12 13:30:07.861165"]]
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+Completed 201 Created in 19ms (Views: 0.2ms | ActiveRecord: 4.2ms | Allocations: 5217)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/animal?name=porquinho%20da%20india3" for 127.0.0.1 at 2022-01-12 10:30:40 -0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AnimalController#create as */*
+  Parameters: {"name"=>"porquinho da india3", "animal"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+  [1m[36mAnimal Create (1.2ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "porquinho da india3"], ["created_at", "2022-01-12 13:30:41.008232"], ["updated_at", "2022-01-12 13:30:41.008232"]]
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+Completed 201 Created in 16ms (Views: 1.5ms | ActiveRecord: 4.1ms | Allocations: 5624)
+
+
+Started POST "/pet?name=agnes22" for 127.0.0.1 at 2022-01-12 10:30:50 -0300
+Processing by PetController#create as */*
+  Parameters: {"name"=>"agnes22"}
+Completed 201 Created in 46ms (Views: 0.4ms | ActiveRecord: 1.6ms | Allocations: 9077)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAnimals (20220111135822)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "animals" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220111135822"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePets (20220111193542)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "pets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "animal_id" integer, "checkin" date, "checkout" date, "birthdate" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_04b7f57991"
+FOREIGN KEY ("animal_id")
+  REFERENCES "animals" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_pets_on_animal_id" ON "pets" ("animal_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220111193542"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-12 14:03:44.803074"], ["updated_at", "2022-01-12 14:03:44.803074"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started POST "/pet?name=agnes28" for 127.0.0.1 at 2022-01-12 11:11:32 -0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetController#create as */*
+  Parameters: {"name"=>"agnes28"}
+Completed 201 Created in 26ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 11285)
+
+
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:11:58 -0300
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:19:in `index'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 834)
+
+
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:11:59 -0300
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:19:in `index'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 716)
+
+
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:12:15 -0300
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:19:in `index'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 716)
+
+
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:12:16 -0300
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:19:in `index'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 716)
+
+
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:12:16 -0300
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:19:in `index'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 701)
+
+
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:12:16 -0300
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:19:in `index'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 701)
+
+
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:12:17 -0300
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:19:in `index'
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 701)
+
+
+Started POST "/pet?name=agnes1" for 127.0.0.1 at 2022-01-12 11:12:28 -0300
+Processing by PetController#create as */*
+  Parameters: {"name"=>"agnes1"}
+Completed 201 Created in 4ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 1032)
+
+
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:12:34 -0300
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:19:in `index'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 703)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/animal" for 127.0.0.1 at 2022-01-12 11:13:55 -0300
+Processing by AnimalController#index as */*
+  [1m[36mAnimal Load (0.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/animal_controller.rb:10:in `index'
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 1.7ms | Allocations: 1166)
+
+
+Started POST "/animal?name=porquinho%20da%20india" for 127.0.0.1 at 2022-01-12 11:14:02 -0300
+Processing by AnimalController#create as */*
+  Parameters: {"name"=>"porquinho da india", "animal"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+  [1m[36mAnimal Create (0.9ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "porquinho da india"], ["created_at", "2022-01-12 14:14:02.132196"], ["updated_at", "2022-01-12 14:14:02.132196"]]
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+Completed 201 Created in 22ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 5184)
+
+
+Started GET "/animal" for 127.0.0.1 at 2022-01-12 11:14:05 -0300
+Processing by AnimalController#index as */*
+  [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/animal_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 968)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.9ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Agnes"], ["animal_id", 1], ["created_at", "2022-01-12 14:14:32.370955"], ["updated_at", "2022-01-12 14:14:32.370955"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:14:41 -0300
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:19:in `index'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 836)
+
+
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:22:12 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:20:in `index'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 6699)
+
+
+Started POST "/pet?name=agnes1&animal_id=1" for 127.0.0.1 at 2022-01-12 11:22:26 -0300
+Processing by PetController#create as */*
+  Parameters: {"name"=>"agnes1", "animal_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+  [1m[36mAnimal Load (0.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+  [1m[36mPet Create (1.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "agnes1"], ["animal_id", 1], ["created_at", "2022-01-12 14:22:26.333687"], ["updated_at", "2022-01-12 14:22:26.333687"]]
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+Completed 201 Created in 16ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 8232)
+
+
+Started POST "/pet?name=agnes2&animal_id=1" for 127.0.0.1 at 2022-01-12 11:22:39 -0300
+Processing by PetController#create as */*
+  Parameters: {"name"=>"agnes2", "animal_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+  [1m[36mPet Create (1.0ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "agnes2"], ["animal_id", 1], ["created_at", "2022-01-12 14:22:39.789085"], ["updated_at", "2022-01-12 14:22:39.789085"]]
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+Completed 201 Created in 10ms (Views: 0.8ms | ActiveRecord: 2.5ms | Allocations: 4146)
+
+
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:22:47 -0300
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:20:in `index'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 1082)
+
+
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:23:33 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:20:in `index'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 7457)
+
+
+Started DELETE "/pet/2" for 127.0.0.1 at 2022-01-12 11:23:51 -0300
+Processing by PetController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pet_controller.rb:13:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pet_controller.rb:13:in `destroy'
+  [1m[36mPet Destroy (1.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/pet_controller.rb:13:in `destroy'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pet_controller.rb:13:in `destroy'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 2852)
+
+
+Started DELETE "/pet/3" for 127.0.0.1 at 2022-01-12 11:23:56 -0300
+Processing by PetController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pet_controller.rb:13:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pet_controller.rb:13:in `destroy'
+  [1m[36mPet Destroy (0.3ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/pet_controller.rb:13:in `destroy'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pet_controller.rb:13:in `destroy'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 2701)
+
+
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:24:00 -0300
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:20:in `index'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 840)
+
+

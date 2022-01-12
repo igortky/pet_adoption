@@ -1,0 +1,34 @@
+{
+   "description":"schema pet",
+   "type":"object",
+   "properties":{
+      "data":{
+         "type":"object",
+         "attributes":{
+            "id":{
+               "type":"string"
+            },
+            "type":{
+               "type":"string",
+               "enum":[
+                  "pet"
+               ]
+            }
+         }
+      },
+      "attributes":{
+         "name":{
+            "type":"number"
+         },
+         "checkin":{
+            "type":"date"
+         },
+         "checkout":{
+            "type":"date"
+         },
+         "birthdate":{
+            "type":"date"
+         }
+      }
+   }
+}
