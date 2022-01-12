@@ -23,4 +23,18 @@ require 'rails_helper'
         expect(Pet.count).to be 0
       end
     end
+
+    # describe "#index" do
+    #   before do
+    #     @pet = Pet.create( name: 'agnes', checkin: Date.today,
+    #                        checkout: Date.tomorrow,
+    #                        birthdate: Date.today - 3.years)
+    #   end
+
+    #   it 'show pet' do
+    #     get '/get'
+
+
+    #   end
+    # end
   end

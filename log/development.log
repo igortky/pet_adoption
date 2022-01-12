@@ -500,3 +500,163 @@ Migrating to CreatePets (20220111193542)
   [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started POST "/animal?name=agnes" for 127.0.0.1 at 2022-01-12 09:05:25 -0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (15.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AnimalController#create as */*
+  Parameters: {"name"=>"agnes"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+  [1m[36mAnimal Create (1.2ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "agnes"], ["created_at", "2022-01-12 12:05:25.632083"], ["updated_at", "2022-01-12 12:05:25.632083"]]
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/animal_controller.rb:4:in `create'
+Completed 201 Created in 24ms (Views: 0.3ms | ActiveRecord: 3.8ms | Allocations: 6278)
+
+
+Started POST "/pet?name=agnes" for 127.0.0.1 at 2022-01-12 09:05:38 -0300
+Processing by PetController#create as */*
+  Parameters: {"name"=>"agnes"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+  [1m[36mPet Create (0.7ms)[0m  [1m[32mINSERT INTO "pets" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "agnes"], ["created_at", "2022-01-12 12:05:38.500289"], ["updated_at", "2022-01-12 12:05:38.500289"]]
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+No template found for PetController#create, rendering head :no_content
+Completed 204 No Content in 34ms (ActiveRecord: 3.4ms | Allocations: 7849)
+
+
+Started POST "/pet?name=agnes1" for 127.0.0.1 at 2022-01-12 09:06:40 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetController#create as */*
+  Parameters: {"name"=>"agnes1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+  [1m[36mPet Create (0.7ms)[0m  [1m[32mINSERT INTO "pets" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "agnes1"], ["created_at", "2022-01-12 12:06:40.195883"], ["updated_at", "2022-01-12 12:06:40.195883"]]
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+Completed 201 Created in 15ms (Views: 0.7ms | ActiveRecord: 2.3ms | Allocations: 8590)
+
+
+Started POST "/pet?name=agnes2" for 127.0.0.1 at 2022-01-12 09:12:25 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetController#create as */*
+  Parameters: {"name"=>"agnes2"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+  [1m[36mPet Create (0.4ms)[0m  [1m[32mINSERT INTO "pets" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "agnes2"], ["created_at", "2022-01-12 12:12:25.877349"], ["updated_at", "2022-01-12 12:12:25.877349"]]
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 2.7ms | Allocations: 9172)
+
+
+  
+NoMethodError (undefined method `ckeckin' for #<Pet:0x00007f802a15b718>
+Did you mean?  checkin):
+  
+app/controllers/pet_controller.rb:7:in `create'
+Started POST "/pet?name=agnes2" for 127.0.0.1 at 2022-01-12 09:12:58 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetController#create as */*
+  Parameters: {"name"=>"agnes2"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+  [1m[36mPet Create (0.4ms)[0m  [1m[32mINSERT INTO "pets" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "agnes2"], ["created_at", "2022-01-12 12:12:58.873795"], ["updated_at", "2022-01-12 12:12:58.873795"]]
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pet_controller.rb:4:in `create'
+Completed 201 Created in 19ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 8030)
+
+
+Started DELETE "/pet/4" for 127.0.0.1 at 2022-01-12 09:15:15 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pet_controller.rb:12:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pet_controller.rb:12:in `destroy'
+  [1m[36mPet Destroy (0.6ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/pet_controller.rb:12:in `destroy'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pet_controller.rb:12:in `destroy'
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 8507)
+
+
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 09:36:21 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/pet"):
+  
+actionpack (6.0.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+railties (6.0.4.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 09:36:59 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/pet"):
+  
+actionpack (6.0.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+railties (6.0.4.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 09:39:56 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetController#index as */*
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/controllers/pet_controller.rb:19:in `index'
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 6496)
+
+
