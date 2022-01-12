@@ -11,9 +11,10 @@ require 'rails_helper'
                                checkout: Date.tomorrow,
                                birthdate: Date.today - 3.years}
 
-        expect(Pet.count).to be 1
+        #expect(Pet.count).to be 1
         puts response.body
         expect(response.body).to match_json_schema('pet')
+        expect(response.status).to eq 201
       end
     end
 

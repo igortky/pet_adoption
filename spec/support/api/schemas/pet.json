@@ -1,37 +1,33 @@
 {
-   "description":"schema pet",
-   "type":"object",
-   "properties":{
-      "data":{
-         "type":"object",
-         "attributes":{
-            "id":{
-               "type":"string"
-            },
-            "type":{
-               "type":"string",
-               "enum":[
-                  "pet"
-               ]
-            }
-         }
-      },
-      "attributes":{
-         "name":{
-            "type":"number"
-         },
-         "animal_id":{
-            "type":"number"
-         },
-         "checkin":{
-            "type":"date"
-         },
-         "checkout":{
-            "type":"date"
-         },
-         "birthdate":{
-            "type":"date"
-         }
-      }
-   }
+  "description":"schema pet",
+  "type":"object",
+  "required": ["data"],
+  "properties":{
+     "data":{
+        "type":"object",
+        "properties":{
+           "id":{
+              "type":"string"
+           },
+           "type":{
+              "type":"string",
+              "enum":[
+                 "pet"
+              ]
+           },
+           "attributes": {
+              "type":"object",
+              "properties": {
+                "name": { "type": "string" },
+                "animal_id": { "type": "number" },
+                "checkin": { "type": "string" },
+                "checkout": { "type": "string" },
+                "birthdate": { "type": "string" }
+              },
+              "required": ["name","animal_id"]
+           }
+        },
+        "required": ["type", "id", "attributes"]
+     }
+  }
 }
