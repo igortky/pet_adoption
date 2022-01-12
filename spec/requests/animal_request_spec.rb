@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe AnimalController do
@@ -5,7 +7,7 @@ describe AnimalController do
     it 'create a new animal' do
       post '/animal', params: { name: 'Galo' }
       expect(Animal.count).to be 1
-      #puts response.body
+      # puts response.body
       expect(response.body).to match_json_schema('animal')
     end
 

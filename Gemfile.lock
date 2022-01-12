@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/jejacks0n/apitome.git
+  revision: 62b0a54aa292a38f186c605af8e69760270ed037
+  specs:
+    apitome (0.3.1)
+      kramdown
+      railties
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -76,8 +84,10 @@ GEM
     json_matchers (0.11.1)
       json_schema
     json_schema (0.21.0)
-    jsonapi-serializer (2.1.0)
+    jsonapi-serializer (2.2.0)
       activesupport (>= 4.2)
+    kramdown (2.3.1)
+      rexml
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -92,6 +102,7 @@ GEM
     mini_portile2 (2.7.1)
     minitest (5.15.0)
     msgpack (1.4.2)
+    mustache (1.1.1)
     nio4r (2.5.8)
     nokogiri (1.13.0)
       mini_portile2 (~> 2.7.0)
@@ -132,6 +143,11 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    rexml (3.2.5)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -149,6 +165,10 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.3)
+    rspec_api_documentation (6.1.0)
+      activesupport (>= 3.0.0)
+      mustache (~> 1.0, >= 0.99.4)
+      rspec (~> 3.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -179,6 +199,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  apitome!
   bootsnap (>= 1.4.2)
   byebug
   jbuilder (~> 2.7)
@@ -188,6 +209,7 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.4, >= 6.0.4.4)
   rspec-rails (~> 5.0.0)
+  rspec_api_documentation (~> 6.1.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)

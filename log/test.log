@@ -7721,3 +7721,123 @@ Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1126)
   [1m[36mPet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mPet Load (0.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/animal" for 127.0.0.1 at 2022-01-12 14:52:14 -0300
+Processing by AnimalController#index as HTML
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.7ms | Allocations: 1800)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/animal" for 127.0.0.1 at 2022-01-12 16:13:40 -0300
+Processing by AnimalController#index as HTML
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+Completed 200 OK in 9ms (Views: 1.5ms | ActiveRecord: 0.7ms | Allocations: 1793)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/animal" for 127.0.0.1 at 2022-01-12 16:13:40 -0300
+Processing by AnimalController#create as HTML
+  Parameters: {"name"=>"Cachorro"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (20.8ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cachorro"], ["created_at", "2022-01-12 19:13:40.354902"], ["updated_at", "2022-01-12 19:13:40.354902"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 28ms (Views: 0.4ms | ActiveRecord: 21.3ms | Allocations: 3662)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "animals"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "animals" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "pets"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "pets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "checkin" date, "checkout" date, "birthdate" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "animal_id" integer NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX "index_pets_on_animal_id" ON "pets" ("animal_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "apets" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "checkin" date DEFAULT NULL, "checkout" date DEFAULT NULL, "birthdate" date DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "animal_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_apets_on_animal_id" ON "apets" ("animal_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "apets" ("id","name","checkin","checkout","birthdate","created_at","updated_at","animal_id")
+                     SELECT "id","name","checkin","checkout","birthdate","created_at","updated_at","animal_id" FROM "pets"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "pets"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "pets" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "checkin" date DEFAULT NULL, "checkout" date DEFAULT NULL, "birthdate" date DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "animal_id" integer NOT NULL, CONSTRAINT "fk_rails_04b7f57991"
+FOREIGN KEY ("animal_id")
+  REFERENCES "animals" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_pets_on_animal_id" ON "pets" ("animal_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("id","name","checkin","checkout","birthdate","created_at","updated_at","animal_id")
+                     SELECT "id","name","checkin","checkout","birthdate","created_at","updated_at","animal_id" FROM "apets"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "apets"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220112171255)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220111135822),
+(20220111193542);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-01-12 19:26:04.798135"], ["updated_at", "2022-01-12 19:26:04.798135"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "8545a21be15de4272e6d524b24a7f24dcb7aab2b"], ["created_at", "2022-01-12 19:26:04.801233"], ["updated_at", "2022-01-12 19:26:04.801233"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/animal" for 127.0.0.1 at 2022-01-12 16:26:04 -0300
+Processing by AnimalController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+Completed 200 OK in 10ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 1828)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/animal" for 127.0.0.1 at 2022-01-12 16:26:04 -0300
+Processing by AnimalController#create as HTML
+  Parameters: {"name"=>"Cachorro"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.5ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cachorro"], ["created_at", "2022-01-12 19:26:04.879535"], ["updated_at", "2022-01-12 19:26:04.879535"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 9ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 3705)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/animal" for 127.0.0.1 at 2022-01-12 16:36:07 -0300
+Processing by AnimalController#index as HTML
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 1733)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/animal" for 127.0.0.1 at 2022-01-12 16:36:07 -0300
+Processing by AnimalController#create as HTML
+  Parameters: {"name"=>"Cachorro"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.9ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cachorro"], ["created_at", "2022-01-12 19:36:07.337112"], ["updated_at", "2022-01-12 19:36:07.337112"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 7ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 3655)
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m

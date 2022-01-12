@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class AnimalController < ApplicationController
   def create
-    #render json: Animal.create(name: params[:name]), status: :created
+    # render json: Animal.create(name: params[:name]), status: :created
     animal = Animal.create(name: params[:name])
     hash = AnimalSerializer.new(animal).serializable_hash
     render json: hash, status: :created
@@ -11,7 +13,7 @@ class AnimalController < ApplicationController
   end
 
   def destroy
-    #render json: Animal.destroy(params[:id]), status: :ok
+    # render json: Animal.destroy(params[:id]), status: :ok
     animal = Animal.destroy(params[:id])
     hash = AnimalSerializer.new(animal).serializable_hash
     render json: hash, status: :ok

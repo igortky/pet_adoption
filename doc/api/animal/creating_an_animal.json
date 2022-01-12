@@ -1,0 +1,51 @@
+{
+  "resource": "Animal",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "/animal",
+  "description": "Creating an animal",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "name",
+      "description": "Animal type name"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/animal",
+      "request_body": "name=Cachorro",
+      "request_headers": {
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "[binary data]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"acd5594c672457f7413723c777e60093\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "fa5d6dee-919a-4442-9209-353010e5ece3",
+        "X-Runtime": "0.015117",
+        "Content-Length": "68"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

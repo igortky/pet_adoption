@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PetController < ApplicationController
   def create
     pet = Pet.create(name: params[:name], animal_id: params[:animal_id],
@@ -27,7 +29,7 @@ class PetController < ApplicationController
   end
 
   def update
-    pet = Pet.update(params[:id], params.require(:pet).permit(:name,:animal_id))
+    pet = Pet.update(params[:id], params.require(:pet).permit(:name, :animal_id))
     hash = PetSerializer.new(pet).serializable_hash
     render json: hash, status: :ok
   end
