@@ -3969,3 +3969,282 @@ Processing by PetController#create as HTML
 Completed 201 Created in 20ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 8621)
   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
   [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (1.2ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:28:26.734576"], ["updated_at", "2022-01-12 14:28:26.734576"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/pet" for 127.0.0.1 at 2022-01-12 11:28:26 -0300
+Processing by PetController#create as HTML
+  Parameters: {"name"=>"agnes", "animal_id"=>"1", "checkin"=>"2022-01-12", "checkout"=>"2022-01-13", "birthdate"=>"2019-01-12"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.8ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:28:26.766188"], ["updated_at", "2022-01-12 14:28:26.766188"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 20ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 8637)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:28:26.774192"], ["updated_at", "2022-01-12 14:28:26.774192"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:28:26.776074"], ["updated_at", "2022-01-12 14:28:26.776074"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/pet/1" for 127.0.0.1 at 2022-01-12 11:28:26 -0300
+Processing by PetController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 766)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:28:26.783927"], ["updated_at", "2022-01-12 14:28:26.783927"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:28:26.785857"], ["updated_at", "2022-01-12 14:28:26.785857"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:28:26 -0300
+Processing by PetController#index as HTML
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 418)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (1.2ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:29:20.579547"], ["updated_at", "2022-01-12 14:29:20.579547"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/pet" for 127.0.0.1 at 2022-01-12 11:29:20 -0300
+Processing by PetController#create as HTML
+  Parameters: {"name"=>"agnes", "animal_id"=>"1", "checkin"=>"2022-01-12", "checkout"=>"2022-01-13", "birthdate"=>"2019-01-12"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.8ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:29:20.608702"], ["updated_at", "2022-01-12 14:29:20.608702"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 19ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 8637)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.4ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:29:20.619351"], ["updated_at", "2022-01-12 14:29:20.619351"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:29:20.621464"], ["updated_at", "2022-01-12 14:29:20.621464"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/pet/1" for 127.0.0.1 at 2022-01-12 11:29:20 -0300
+Processing by PetController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 766)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.5ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:29:20.628098"], ["updated_at", "2022-01-12 14:29:20.628098"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:29:20.630173"], ["updated_at", "2022-01-12 14:29:20.630173"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:29:20 -0300
+Processing by PetController#index as HTML
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 418)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (1.1ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:41:17.816125"], ["updated_at", "2022-01-12 14:41:17.816125"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/pet" for 127.0.0.1 at 2022-01-12 11:41:17 -0300
+Processing by PetController#create as HTML
+  Parameters: {"name"=>"agnes", "animal_id"=>"1", "checkin"=>"2022-01-12", "checkout"=>"2022-01-13", "birthdate"=>"2019-01-12"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.8ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:41:17.845228"], ["updated_at", "2022-01-12 14:41:17.845228"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 19ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 8637)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:41:17.856078"], ["updated_at", "2022-01-12 14:41:17.856078"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:41:17.858217"], ["updated_at", "2022-01-12 14:41:17.858217"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/pet/1" for 127.0.0.1 at 2022-01-12 11:41:17 -0300
+Processing by PetController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 766)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:41:17.866342"], ["updated_at", "2022-01-12 14:41:17.866342"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:41:17.868194"], ["updated_at", "2022-01-12 14:41:17.868194"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:41:17 -0300
+Processing by PetController#index as HTML
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 418)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:41:17.875077"], ["updated_at", "2022-01-12 14:41:17.875077"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:41:17.877324"], ["updated_at", "2022-01-12 14:41:17.877324"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pet/1" for 127.0.0.1 at 2022-01-12 11:41:17 -0300
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.4ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:41:36.369960"], ["updated_at", "2022-01-12 14:41:36.369960"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/pet" for 127.0.0.1 at 2022-01-12 11:41:36 -0300
+Processing by PetController#create as HTML
+  Parameters: {"name"=>"agnes", "animal_id"=>"1", "checkin"=>"2022-01-12", "checkout"=>"2022-01-13", "birthdate"=>"2019-01-12"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:41:36.390052"], ["updated_at", "2022-01-12 14:41:36.390052"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 13ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 8637)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:41:36.396886"], ["updated_at", "2022-01-12 14:41:36.396886"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:41:36.399019"], ["updated_at", "2022-01-12 14:41:36.399019"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/pet/1" for 127.0.0.1 at 2022-01-12 11:41:36 -0300
+Processing by PetController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 766)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:41:36.405876"], ["updated_at", "2022-01-12 14:41:36.405876"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:41:36.407757"], ["updated_at", "2022-01-12 14:41:36.407757"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:41:36 -0300
+Processing by PetController#index as HTML
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 418)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:41:36.414566"], ["updated_at", "2022-01-12 14:41:36.414566"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:41:36.416423"], ["updated_at", "2022-01-12 14:41:36.416423"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pet/1" for 127.0.0.1 at 2022-01-12 11:41:36 -0300
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.4ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:43:21.214607"], ["updated_at", "2022-01-12 14:43:21.214607"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/pet" for 127.0.0.1 at 2022-01-12 11:43:21 -0300
+Processing by PetController#create as HTML
+  Parameters: {"name"=>"agnes", "animal_id"=>"1", "checkin"=>"2022-01-12", "checkout"=>"2022-01-13", "birthdate"=>"2019-01-12"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:43:21.233887"], ["updated_at", "2022-01-12 14:43:21.233887"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 13ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 8637)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:43:21.239840"], ["updated_at", "2022-01-12 14:43:21.239840"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:43:21.241702"], ["updated_at", "2022-01-12 14:43:21.241702"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/pet/1" for 127.0.0.1 at 2022-01-12 11:43:21 -0300
+Processing by PetController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 766)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.8ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:43:21.248724"], ["updated_at", "2022-01-12 14:43:21.248724"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:43:21.251196"], ["updated_at", "2022-01-12 14:43:21.251196"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pet" for 127.0.0.1 at 2022-01-12 11:43:21 -0300
+Processing by PetController#index as HTML
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 418)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Galo"], ["created_at", "2022-01-12 14:43:21.257205"], ["updated_at", "2022-01-12 14:43:21.257205"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "checkin", "checkout", "birthdate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "agnes"], ["animal_id", 1], ["checkin", "2022-01-12"], ["checkout", "2022-01-13"], ["birthdate", "2019-01-12"], ["created_at", "2022-01-12 14:43:21.258999"], ["updated_at", "2022-01-12 14:43:21.258999"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pet/1" for 127.0.0.1 at 2022-01-12 11:43:21 -0300
+Processing by PetController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 478)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m

@@ -20,6 +20,9 @@
          "name":{
             "type":"number"
          },
+         "animal_id":{
+            "type":"number"
+         },
          "checkin":{
             "type":"date"
          },
