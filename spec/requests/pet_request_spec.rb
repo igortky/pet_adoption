@@ -10,9 +10,6 @@ require 'rails_helper'
                                checkin: Date.today,
                                checkout: Date.tomorrow,
                                birthdate: Date.today - 3.years}
-
-        #expect(Pet.count).to be 1
-        puts response.body
         expect(response.body).to match_json_schema('pet')
         expect(response.status).to eq 201
       end
@@ -30,6 +27,7 @@ require 'rails_helper'
       it 'destroy a pet' do
         delete "/pet/#{@pet.id}"
         expect(Pet.count).to be 0
+        expect(response.status).to eq 200
       end
     end
 
