@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/jejacks0n/apitome.git
-  revision: 62b0a54aa292a38f186c605af8e69760270ed037
-  specs:
-    apitome (0.3.1)
-      kramdown
-      railties
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -64,6 +56,9 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
+    apitome (0.3.0)
+      kramdown
+      railties
     bindex (0.8.1)
     bootsnap (1.9.4)
       msgpack (~> 1.0)
@@ -199,7 +194,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  apitome!
+  apitome (~> 0.3.0)
   bootsnap (>= 1.4.2)
   byebug
   jbuilder (~> 2.7)

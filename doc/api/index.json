@@ -12,10 +12,51 @@
           "method": "post"
         },
         {
-          "description": "Get a list of all animals",
-          "link": "animal/get_a_list_of_all_animals.json",
+          "description": "Deleting an animal",
+          "link": "animal/deleting_an_animal.json",
+          "groups": "all",
+          "route": "/animal/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Listing animals",
+          "link": "animal/listing_animals.json",
           "groups": "all",
           "route": "/animal",
+          "method": "get"
+        },
+        {
+          "description": "Updating an animal",
+          "link": "animal/updating_an_animal.json",
+          "groups": "all",
+          "route": "/animal/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Pet",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Creating a pet",
+          "link": "pet/creating_a_pet.json",
+          "groups": "all",
+          "route": "/pet",
+          "method": "post"
+        },
+        {
+          "description": "Deleting an animal",
+          "link": "pet/deleting_an_animal.json",
+          "groups": "all",
+          "route": "/pet/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Listing animals",
+          "link": "pet/listing_animals.json",
+          "groups": "all",
+          "route": "/pet",
           "method": "get"
         }
       ]

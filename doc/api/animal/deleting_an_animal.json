@@ -1,31 +1,36 @@
 {
   "resource": "Animal",
   "resource_explanation": null,
-  "http_method": "GET",
-  "route": "/animal",
-  "description": "Get a list of all animals",
+  "http_method": "DELETE",
+  "route": "/animal/:id",
+  "description": "Deleting an animal",
   "explanation": null,
   "parameters": [
-
+    {
+      "required": true,
+      "name": "name",
+      "description": "animal type name"
+    }
   ],
   "response_fields": [
 
   ],
   "requests": [
     {
-      "request_method": "GET",
-      "request_path": "/animal",
+      "request_method": "DELETE",
+      "request_path": "/animal/1",
       "request_body": null,
       "request_headers": {
         "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
         "Cookie": ""
       },
       "request_query_parameters": {
       },
-      "request_content_type": null,
+      "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[binary data]",
+      "response_body": "{\n  \"data\": {\n    \"id\": \"1\",\n    \"type\": \"animal\",\n    \"attributes\": {\n      \"name\": \"Dog\"\n    }\n  }\n}",
       "response_headers": {
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
@@ -34,11 +39,11 @@
         "X-Permitted-Cross-Domain-Policies": "none",
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"4f53cda18c2baa0c0354bb5f9a3ecbe5\"",
+        "ETag": "W/\"f480907fddc0fcd8fa08dfc1022e1039\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "a4195ebc-49e1-4b71-85a2-fde0b5ac959c",
-        "X-Runtime": "0.011979",
-        "Content-Length": "2"
+        "X-Request-Id": "8192d307-7eeb-4550-a4f4-63e0e251c88d",
+        "X-Runtime": "0.015940",
+        "Content-Length": "63"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

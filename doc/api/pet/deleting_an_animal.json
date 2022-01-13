@@ -1,15 +1,15 @@
 {
-  "resource": "Animal",
+  "resource": "Pet",
   "resource_explanation": null,
-  "http_method": "POST",
-  "route": "/animal",
-  "description": "Creating an animal",
+  "http_method": "DELETE",
+  "route": "/pet/:id",
+  "description": "Deleting an animal",
   "explanation": null,
   "parameters": [
     {
-      "with_example": true,
-      "name": "name",
-      "description": "Animal type name"
+      "required": true,
+      "name": "id",
+      "description": " id"
     }
   ],
   "response_fields": [
@@ -17,9 +17,9 @@
   ],
   "requests": [
     {
-      "request_method": "POST",
-      "request_path": "/animal",
-      "request_body": "name=Cachorro",
+      "request_method": "DELETE",
+      "request_path": "/pet/1",
+      "request_body": null,
       "request_headers": {
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
@@ -28,9 +28,9 @@
       "request_query_parameters": {
       },
       "request_content_type": "application/x-www-form-urlencoded",
-      "response_status": 201,
-      "response_status_text": "Created",
-      "response_body": "{\n  \"data\": {\n    \"id\": \"2\",\n    \"type\": \"animal\",\n    \"attributes\": {\n      \"name\": \"Cachorro\"\n    }\n  }\n}",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"data\": {\n    \"id\": \"1\",\n    \"type\": \"pet\",\n    \"attributes\": {\n      \"name\": \"agnes\",\n      \"animal_id\": 1,\n      \"checkin\": \"2022-01-13\",\n      \"checkout\": \"2022-01-14\",\n      \"birthdate\": \"2019-01-13\"\n    }\n  }\n}",
       "response_headers": {
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
@@ -39,11 +39,11 @@
         "X-Permitted-Cross-Domain-Policies": "none",
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"f56cd6a00b44a6007fb9041fe59ace21\"",
+        "ETag": "W/\"755d7bbd0932fe84fdeebb03b21eabe7\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "0caade35-014f-4f46-82f6-2e1750cc4231",
-        "X-Runtime": "0.009524",
-        "Content-Length": "68"
+        "X-Request-Id": "a466b577-d7a9-4237-8da2-6e72b852bc74",
+        "X-Runtime": "0.004464",
+        "Content-Length": "148"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
-gem 'apitome', github: 'jejacks0n/apitome'
+gem 'apitome', '~> 0.3.0'
 gem 'rspec_api_documentation', '~> 6.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

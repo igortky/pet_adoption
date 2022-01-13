@@ -1,0 +1,47 @@
+{
+  "resource": "Pet",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/pet",
+  "description": "Listing animals",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/pet",
+      "request_body": null,
+      "request_headers": {
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"data\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"pet\",\n      \"attributes\": {\n        \"name\": \"agnes\",\n        \"animal_id\": 1,\n        \"checkin\": \"2022-01-13\",\n        \"checkout\": \"2022-01-14\",\n        \"birthdate\": \"2019-01-13\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"pet\",\n      \"attributes\": {\n        \"name\": \"tobby\",\n        \"animal_id\": 3,\n        \"checkin\": \"2022-01-13\",\n        \"checkout\": \"2022-01-14\",\n        \"birthdate\": \"2019-01-13\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"pet\",\n      \"attributes\": {\n        \"name\": \"fluffy\",\n        \"animal_id\": 2,\n        \"checkin\": \"2022-01-13\",\n        \"checkout\": \"2022-01-14\",\n        \"birthdate\": \"2019-01-13\"\n      }\n    }\n  ]\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"0d8335644342105f20f2272e8fa71142\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "cd632f37-456f-4fb6-9ecc-4a0c2bcaff51",
+        "X-Runtime": "0.013374",
+        "Content-Length": "431"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

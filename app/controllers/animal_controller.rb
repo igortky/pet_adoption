@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AnimalController < ApplicationController
+class AnimalController < ActionController::API
   def create
     # render json: Animal.create(name: params[:name]), status: :created
     animal = Animal.create(name: params[:name])
@@ -9,7 +9,9 @@ class AnimalController < ApplicationController
   end
 
   def index
-    render json: Animal.all
+    animals = Animal.all
+    hash = AnimalSerializer.new(animals).serializable_hash.to_json
+    render json: hash, status: :ok
   end
 
   def destroy
