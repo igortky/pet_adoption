@@ -58,6 +58,13 @@
           "groups": "all",
           "route": "/pet",
           "method": "get"
+        },
+        {
+          "description": "Updating an animal",
+          "link": "pet/updating_an_animal.json",
+          "groups": "all",
+          "route": "/pet/:id",
+          "method": "put"
         }
       ]
     }

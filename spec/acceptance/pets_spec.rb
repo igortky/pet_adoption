@@ -57,7 +57,9 @@ resource 'Pet' do
   end
 
   put '/pet/:id' do
-    parameter :name, 'pet name to update'
+    with_options scope: :pet do
+      parameter :name
+    end
     parameter :id, 'pet id whose will be update'
     let(:id) { pet.id }
     let(:name) { 'Jorge' }

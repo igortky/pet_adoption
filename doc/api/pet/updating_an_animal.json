@@ -1,15 +1,19 @@
 {
-  "resource": "Animal",
+  "resource": "Pet",
   "resource_explanation": null,
-  "http_method": "DELETE",
-  "route": "/animal/:id",
-  "description": "Deleting an animal",
+  "http_method": "PUT",
+  "route": "/pet/:id",
+  "description": "Updating an animal",
   "explanation": null,
   "parameters": [
     {
-      "required": true,
+      "scope": "pet",
       "name": "name",
-      "description": "animal type name"
+      "description": "Pet name"
+    },
+    {
+      "name": "id",
+      "description": "pet id whose will be update"
     }
   ],
   "response_fields": [
@@ -17,9 +21,9 @@
   ],
   "requests": [
     {
-      "request_method": "DELETE",
-      "request_path": "/animal/1",
-      "request_body": null,
+      "request_method": "PUT",
+      "request_path": "/pet/1",
+      "request_body": "pet[name]=Jorge",
       "request_headers": {
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
@@ -30,7 +34,7 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"id\": \"1\",\n    \"type\": \"animal\",\n    \"attributes\": {\n      \"name\": \"Dog\"\n    }\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"id\": \"1\",\n    \"type\": \"pet\",\n    \"attributes\": {\n      \"name\": \"Jorge\",\n      \"animal_id\": 1,\n      \"checkin\": \"2022-01-13\",\n      \"checkout\": \"2022-01-14\",\n      \"birthdate\": \"2019-01-13\"\n    }\n  }\n}",
       "response_headers": {
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
@@ -39,11 +43,11 @@
         "X-Permitted-Cross-Domain-Policies": "none",
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"f480907fddc0fcd8fa08dfc1022e1039\"",
+        "ETag": "W/\"ef59d4d1785b57f16db683b440618852\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "82044843-f2f0-4f4b-a700-0d6b59113c96",
-        "X-Runtime": "0.016719",
-        "Content-Length": "63"
+        "X-Request-Id": "37d2a067-d0ac-4afd-b157-85138cbb60a9",
+        "X-Runtime": "0.006239",
+        "Content-Length": "148"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
